@@ -5,9 +5,9 @@ public class CaixaEletronico {
     public BigDecimal sacado;
     private BigDecimal saldo;
     private String nome;
-    private String[] cedulas = {"200", "100", "50", "20", "10", "5", "2", "1", "0.5", "0.25", "0.1", "0.05", "0.01"};
-    private int[] quantidadeCedulas = {0,0,0,0,0,0,0,0,0,0,0,0,0};
-
+    private final String[] cedulas = {"200", "100", "50", "20", "10", "5", "2", "1", "0.5", "0.25", "0.1", "0.05", "0.01"};
+    private final int[] quantidadeCedulas = {0,0,0,0,0,0,0,0,0,0,0,0,0};
+    private final int[] cedulasRestantes = {8,6,4,2,6,4,8,4,20,32,65,24,73};
 
     public CaixaEletronico(String nome, String saldo) {
         this.setNome(nome);
@@ -26,8 +26,11 @@ public class CaixaEletronico {
     }
 
     public void contadorDeCedulas() {
-        while (this.getSacado().compareTo(new BigDecimal("0")) > 0 && numero < 13) {
+        for (numero = 0; this.getSacado().compareTo(new BigDecimal("0")) > 0;) {
             if (this.getSacado().compareTo(new BigDecimal(this.cedulas[numero])) >= 0 ) {
+                if (this.getCedulasRestantes(numero) == 0){
+
+                }
                 this.setSacado( this.getSacado().subtract(new BigDecimal(this.getCedulas(numero))));
                 quantidadeCedulas[numero] += 1;
             } else {
@@ -73,5 +76,9 @@ public class CaixaEletronico {
 
     public String getCedulas(int numero) {
         return cedulas[numero];
+    }
+
+    public int getCedulasRestantes(int numero) {
+        return cedulasRestantes[numero];
     }
 }
