@@ -1,9 +1,14 @@
+import java.util.*;
 import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
         CaixaEletronico c1 = new CaixaEletronico("Jose","2000");
-        c1.sacar(BigDecimal.valueOf(1964.12F));
+
+        System.out.println("Qual o valor que voce deseja sacar?");
+        c1.sacar(new BigDecimal(teclado.nextLine()));
         c1.contadorDeCedulas();
+
     }
 }

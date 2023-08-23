@@ -28,12 +28,13 @@ public class CaixaEletronico {
     public void contadorDeCedulas() {
         while (this.getSacado().compareTo(new BigDecimal("0")) > 0 && numero < 13) {
             if (this.getSacado().compareTo(new BigDecimal(this.cedulas[numero])) >= 0 ) {
-                this.setSacado( this.getSacado().subtract(new BigDecimal(getCedulas(numero))));
+                this.setSacado( this.getSacado().subtract(new BigDecimal(this.getCedulas(numero))));
                 quantidadeCedulas[numero] += 1;
             } else {
                 numero += 1;
             }
         }
+
         System.out.println("200 : " +  this.quantidadeCedulas[0]);
         System.out.println("100 : " +  this.quantidadeCedulas[1]);
         System.out.println("50  : " +  this.quantidadeCedulas[2]);
@@ -67,7 +68,7 @@ public class CaixaEletronico {
         return sacado;
     }
     public void setSacado(BigDecimal sacado) {
-        this.sacado = sacado.setScale(2,BigDecimal.ROUND_HALF_EVEN);
+        this.sacado = sacado;//.setScale(2,BigDecimal.ROUND_HALF_EVEN);
     }
 
     public String getCedulas(int numero) {
