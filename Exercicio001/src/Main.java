@@ -4,11 +4,13 @@ import java.math.BigDecimal;
 public class Main {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        CaixaEletronico c1 = new CaixaEletronico("Jose","2000");
+        CaixaEletronico c1 = new CaixaEletronico("Jose");
+        Saque saque = new Saque("9999999999999999");
 
         System.out.println("Qual o valor que voce deseja sacar?");
-        c1.sacar(new BigDecimal(teclado.nextLine()));
-        c1.contadorDeCedulas();
-
+        saque.sacar(new BigDecimal(teclado.nextLine()));
+        if (saque.getStatus()) {
+            saque.contadorDeCedulas();
+        }
     }
 }
