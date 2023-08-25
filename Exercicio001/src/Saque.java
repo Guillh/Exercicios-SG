@@ -26,7 +26,7 @@ public class Saque {
             } else {
                 this.setSaldo(this.getSaldo().subtract(quantidade));
                 this.setSacado(quantidade);
-                System.out.println("Saque realizado com sucesso!");
+                System.out.println("Saque realizado com sucesso!\n");
             }
         } else {
             System.out.println(this.getMensagemSistema());
@@ -80,19 +80,19 @@ public class Saque {
             }
         }
 
-        System.out.println("200 : " +  this.quantidadeCedulas[0]);
-        System.out.println("100 : " +  this.quantidadeCedulas[1]);
-        System.out.println("50  : " +  this.quantidadeCedulas[2]);
-        System.out.println("20  : " +  this.quantidadeCedulas[3]);
-        System.out.println("10  : " +  this.quantidadeCedulas[4]);
-        System.out.println("5   : " +  this.quantidadeCedulas[5]);
-        System.out.println("2   : " +  this.quantidadeCedulas[6]);
-        System.out.println("1   : " +  this.quantidadeCedulas[7]);
-        System.out.println("0.50: " +  this.quantidadeCedulas[8]);
-        System.out.println("0.25: " +  this.quantidadeCedulas[9]);
-        System.out.println("0.10: " +  this.quantidadeCedulas[10]);
-        System.out.println("0.05: " +  this.quantidadeCedulas[11]);
-        System.out.println("0.01: " +  this.quantidadeCedulas[12]);
+        System.out.print("| R$ 200,00: " +  this.quantidadeCedulas[0] + " |");
+        System.out.print("| R$ 100,00: " +  this.quantidadeCedulas[1] + " |");
+        System.out.print("| R$ 50,00 : " +  this.quantidadeCedulas[2] + " |");
+        System.out.println("| R$ 20,00 : " +  this.quantidadeCedulas[3] + " |");
+        System.out.print("| R$ 10,00 : " +  this.quantidadeCedulas[4] + " |");
+        System.out.print("| R$ 5,00  : " +  this.quantidadeCedulas[5] + " |");
+        System.out.print("| R$ 2,00  : " +  this.quantidadeCedulas[6] + " |");
+        System.out.println("| R$ 1,00  : " +  this.quantidadeCedulas[7] + " |\n");
+        System.out.print("| R$ 0.50  : " +  this.quantidadeCedulas[8] + " |");
+        System.out.print("| R$ 0.25  : " +  this.quantidadeCedulas[9] + " |");
+        System.out.println("| R$ 0.10  : " +  this.quantidadeCedulas[10] + " |");
+        System.out.print("| R$ 0.05  : " +  this.quantidadeCedulas[11] + " |");
+        System.out.println("| R$ 0.01  : " +  this.quantidadeCedulas[12] + " |");
     }
 
     public BigDecimal getSaldoCaixa() {
